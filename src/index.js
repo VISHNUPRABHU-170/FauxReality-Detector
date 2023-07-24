@@ -7,6 +7,7 @@ import App from './App';
 import Signin from './Components/Signin';
 import Signup from './Components/Signup';
 import { Routes, Route } from 'react-router-dom';
+import Prediction from './Components/Prediction';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +17,7 @@ root.render(
         <Route index to path="/" element={<App></App>} />
         <Route path="/signin" element={<Signin></Signin>} />
         <Route path="/signup" element={<Signup></Signup>} />
+        <Route path="/prediction" element={<Prediction></Prediction>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

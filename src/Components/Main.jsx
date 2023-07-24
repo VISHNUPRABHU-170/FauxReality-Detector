@@ -1,16 +1,12 @@
 import icon from "./icon.jpg";
 import { useState } from "react";
 import Uploadicon from "./upload icon.png";
-import Google from "./google-icon.png";
-import Cam from "./cam-icon.jpg";
 import Cancel from "./cancel-icon.png";
+import { Link } from "react-router-dom";
 
 
 function Main() {
-
-    const [show, setShow] = useState(false);
-    const [inn, setIn] = useState(false);
-    const [up, setUp] = useState(false);
+    const [show, setShow] = useState(false)
     const [file, setFile] = useState(null);
 
     const handleFileDrop = (e) => {
@@ -41,25 +37,13 @@ function Main() {
                     <nav className="px-[100px] ml-[200px] text-xl font-semibold">
                         <ul className="grid grid-cols-3 gap-[80px]">
                             <li className="py-2 hover:text-[25px] hover:text-black">
-                                <a href="/">
-                                    <button onClick={() => { setShow(!show) }}>
-                                        Detect
-                                    </button>
-                                </a>
+                                <Link to="/">Detect</Link>
                             </li>
                             <li className="py-2 hover:text-[25px] hover:text-black">
-                                <a>
-                                    <button onClick={() => { setIn(!inn) }}>
-                                        Login
-                                    </button>
-                                </a>
+                                <Link to="/signin">Login</Link>
                             </li>
                             <li className="bg-white rounded-md drop-shadow-lg text-blue-800 w-[95px] h-[45px] flex justify-center hover:bg-black hover:text-white">
-                                <a className="py-2">
-                                    <button onClick={() => { setUp(!up) }}>
-                                        SignUp
-                                    </button>
-                                </a>
+                                <Link to="/signup" className="py-2">SignUp</Link>
                             </li>
                         </ul>
                     </nav>
@@ -110,7 +94,7 @@ function Main() {
                                     </div>
                                     <div className="flex justify-center py-2 sm:py-8">
                                         <button className="bg-white shadow-2xl rounded-md w-[240px] h-[45px] hover:bg-blue-800">
-                                            <p className="text-[26px] text-blue-700 drop-shadow-xl font-semibold hover:text-white">Detect Fraudulent</p>
+                                            <p className="text-[26px] text-blue-700 drop-shadow-xl font-semibold hover:text-white"><Link to="/prediction">Detect Fraudulent</Link></p>
                                         </button>
                                     </div>
                                 </div>
@@ -135,7 +119,7 @@ function Main() {
                                             {file ? (
                                                 <div className="flex justify-center font-medium text-xl mt-[-15px] text-gray-600">
                                                     <p className="mr-2 flex items-center justify-center bg-gray-100 rounded-md h-10 w-[150px]">{file.substring(0, 10) + '' + "...."}</p>
-                                                    <img src={Cancel} onClick={() => { setFile(null) }} className="py-1 w-[30px] h-[40px]" />
+                                                    <img src={Cancel} alt="Cancel" onClick={() => { setFile(null) }} className="py-1 w-[30px] h-[40px]" />
                                                 </div>
                                             ) : (
                                                 <div className="flex justify-center font-medium text-xl mt-[-15px] text-white">
@@ -152,7 +136,7 @@ function Main() {
                                     </div>
                                     <div className="flex justify-center py-2 sm:py-8">
                                         <button className="bg-white shadow-2xl rounded-md w-[240px] h-[45px] hover:bg-green-800">
-                                            <p className="text-[26px] text-green-700 drop-shadow-xl font-semibold hover:text-white">Detect Fraudulent</p>
+                                            <p className="text-[26px] text-green-700 drop-shadow-xl font-semibold hover:text-white"><Link to="/prediction">Detect Fraudulent</Link></p>
                                         </button>
                                     </div>
                                 </div>
@@ -162,8 +146,6 @@ function Main() {
                 </div>
             </div>
             {show && <Navbar />}
-            {inn && <Login />}
-            {up && <Signup />}
         </div>
     );
 
@@ -173,26 +155,14 @@ function Main() {
                 <div className="bg-white rounded-lg h-[165px] w-[130px] text-xl mr-2">
                     <nav>
                         <ul className="mt-0 grid grid-cols-1 gap-2 font-semibold">
-                            <li className="flex justify-center h-[50px] hover:bg-black hover:rounded-lg hover:text-white">
-                                <a href="/" className="mt-2"><button onClick={() => { setShow(!show) }}>
-                                    Detect
-                                </button></a>
+                            <li className="flex justify-center py-2 h-[50px] hover:bg-black hover:rounded-lg hover:text-white">
+                                <Link to="/">Detect</Link>
                             </li>
-                            <li className="flex justify-center h-[50px] hover:bg-black hover:rounded-lg hover:text-white">
-                                <a className="mt-2"><button onClick={() => {
-                                    setIn(!inn)
-                                    setShow(!show)
-                                }}>
-                                    Login
-                                </button></a>
+                            <li className="flex justify-center py-2 h-[50px] hover:bg-black hover:rounded-lg hover:text-white">
+                                <Link to="/signin">Login</Link>
                             </li>
-                            <li className="flex justify-center h-[50px] hover:bg-black hover:rounded-lg hover:text-white">
-                                <a className="mt-2"><button onClick={() => {
-                                    setUp(!up)
-                                    setShow(!show)
-                                }}>
-                                    SignUp
-                                </button></a>
+                            <li className="flex justify-center py-2 h-[50px] hover:bg-black hover:rounded-lg hover:text-white">
+                                <Link to="/signup">Signin</Link>
                             </li>
                         </ul>
                     </nav>
@@ -200,112 +170,6 @@ function Main() {
             </div>
         );
     };
-
-    function Login() {
-        return (
-            <div>
-                <div className="mt-[70px] fixed inset-0 flex items-center justify-center bg-opacity-75 bg-gray-500 z-50">
-                    <div className="bg-white rounded-2xl sm:w-[700px] sm:h-[560px]">
-                        <form className="grid grid-cols-1 gap-[20px] py-[50px] text-lg">
-                            <div className="flex justify-center text-4xl font-bold">
-                                Login
-                            </div>
-                            <div className="flex justify-center mt-2">
-                                <div className="flex items-center bg-white border-2 border-gray-500 rounded-lg w-[250px] h-[40px]">
-                                    <img src={Google} alt="Google" className="px-4 w-15 h-6" />
-                                    <button className="ml-[-10px]">Continue with Google</button>
-                                </div>
-                            </div>
-                            <div className="flex justify-center mt-5 font-semibold">
-                                <div className="grid grid-cols-1">
-                                    <h1 className="text-gray-500">USERNAME</h1>
-                                    <input type="text" className="bg-gray-100 border-2 w-[300px] border-gray-200 rounded-md p-2" required />
-                                </div>
-                            </div>
-                            <div className="flex justify-center  font-semibold">
-                                <div className="grid grid-cols-1">
-                                    <h1 className="text-gray-500">PASSWORD</h1>
-                                    <input type="password" className="bg-gray-100 border-2 w-[300px] border-gray-200 rounded-md p-2" required />
-                                </div>
-                            </div>
-                            <div className="flex justify-center  font-semibold">
-                                <button
-                                    type="submit"
-                                    className="ml-2 mt-[-8px] w-[100px] h-[40px] text-blue-400 rounded-lg shadow-xl hover:bg-blue-600 hover:text-white"
-                                    onClick={() => { setIn(false) }}>
-                                    Login
-                                </button>
-                            </div>
-                            <div className="flex justify-center">
-                                <p className="ml-6">Don't have an Account yet?</p>
-                                <button
-                                    className="ml-2 mt-[-8px] w-[100px] h-[40px] text-blue-400 rounded-lg shadow-xl hover:bg-blue-600 hover:text-white"
-                                    onClick={() => {
-                                        setUp(true)
-                                        setIn(false)
-                                    }}>
-                                    Signup
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        );
-    }
-
-    function Signup() {
-        return (
-            <div>
-                <div className="mt-[70px] fixed inset-0 flex items-center justify-center bg-opacity-75 bg-gray-500 z-50">
-                    <div className="bg-white rounded-2xl sm:w-[700px] sm:h-[560px]">
-                        <form className="grid grid-cols-1 gap-[20px] py-[50px] text-lg">
-                            <div className="flex justify-center text-4xl font-bold">
-                                SignUp
-                            </div>
-                            <div className="flex justify-center mt-2">
-                                <div className="flex items-center bg-white border-2 border-gray-500 rounded-lg w-[250px] h-[40px]">
-                                    <img src={Google} alt="Google" className="px-4 w-15 h-6" />
-                                    <button className="ml-[-10px]">Continue with Google</button>
-                                </div>
-                            </div>
-                            <div className="flex justify-center mt-5 font-semibold">
-                                <div className="grid grid-cols-1">
-                                    <h1 className="text-gray-500">USERNAME</h1>
-                                    <input type="text" className="bg-gray-100 border-2 w-[300px] border-gray-200 rounded-md p-2" required />
-                                </div>
-                            </div>
-                            <div className="flex justify-center  font-semibold">
-                                <div className="grid grid-cols-1">
-                                    <h1 className="text-gray-500">PASSWORD</h1>
-                                    <input type="password" className="bg-gray-100 border-2 w-[300px] border-gray-200 rounded-md p-2" required />
-                                </div>
-                            </div>
-                            <div className="flex justify-center  font-semibold">
-                                <button
-                                    type="submit"
-                                    className="ml-2 mt-[-8px] w-[100px] h-[40px] text-blue-400 rounded-lg shadow-xl hover:bg-blue-600 hover:text-white"
-                                    onClick={() => { setUp(false) }}>
-                                    Signup
-                                </button>
-                            </div>
-                            <div className="flex justify-center">
-                                <p className="ml-6">Already have an Account?</p>
-                                <button
-                                    className="ml-2 mt-[-8px] w-[100px] h-[40px] text-blue-400 rounded-lg shadow-xl hover:bg-blue-600 hover:text-white"
-                                    onClick={() => {
-                                        setUp(false)
-                                        setIn(true)
-                                    }}>
-                                    Login
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        );
-    }
 };
 
 export default Main;
