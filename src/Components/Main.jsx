@@ -1,7 +1,4 @@
-import icon from "./icon.jpg";
 import { useState } from "react";
-import Uploadicon from "./upload icon.png";
-import Cancel from "./cancel-icon.png";
 import { Link } from "react-router-dom";
 
 
@@ -29,7 +26,7 @@ function Main() {
             className="relative overflow-hidden"
         >
             <div className="text-white bg-gradient-to-r from-blue-300 to-green-300 shadow-xl w-full h-[55px] sm:h-[70px] flex items-center sm:grid sm:grid-cols-3">
-                <img src={icon} alt="icon" className="w-[60px] h-full sm:h-[70px] sm:w-[90px]" />
+                <img src="https://i.ibb.co/yWLCdq7/icon.jpg" alt="icon" className="w-[60px] h-full sm:h-[70px] sm:w-[90px]" />
                 <h1 className="drop-shadow-xl text-[23px] px-4 ml-[-10px] sm:text-4xl font-bold sm:px-4 sm:ml-[-420px]">
                     FauxReality Detector
                 </h1>
@@ -70,14 +67,14 @@ function Main() {
                                 <div className="grid grid-cols-1">
                                     <div className="py-[60px] grid grid-cols-1">
                                         <div className="flex justify-center mt-[-40px] sm:mt-[-30px]">
-                                            <img src={Uploadicon} alt="upload" className="h-[200px]" />
+                                            <img src="https://i.ibb.co/sj6NrdZ/upload-icon.png" alt="upload" className="h-[200px]" />
                                         </div>
                                         <div
                                         >
                                             {file ? (
                                                 <div className="flex justify-center font-medium text-xl mt-[-15px] text-gray-600">
                                                     <p className="mr-2 flex items-center justify-center bg-gray-100 rounded-md h-10 w-[150px]">{file.substring(0, 10) + '' + "...."}</p>
-                                                    <img src={Cancel} onClick={() => { setFile(null) }} className="py-1 w-[30px] h-[40px]" />
+                                                    <img src="https://i.ibb.co/1zspQzq/cancel-icon.png" onClick={() => { setFile(null) }} className="py-1 w-[30px] h-[40px]" />
                                                 </div>
                                             ) : (
                                                 <div className="flex justify-center font-medium text-xl mt-[-15px] text-white">
@@ -112,14 +109,14 @@ function Main() {
                                 <div className="grid grid-cols-1">
                                     <div className="py-[60px] grid grid-cols-1">
                                         <div className="flex justify-center mt-[-40px] sm:mt-[-30px]">
-                                            <img src={Uploadicon} alt="upload" className="h-[200px]" />
+                                            <img src="https://i.ibb.co/sj6NrdZ/upload-icon.png" alt="upload" className="h-[200px]" />
                                         </div>
                                         <div
                                         >
                                             {file ? (
                                                 <div className="flex justify-center font-medium text-xl mt-[-15px] text-gray-600">
                                                     <p className="mr-2 flex items-center justify-center bg-gray-100 rounded-md h-10 w-[150px]">{file.substring(0, 10) + '' + "...."}</p>
-                                                    <img src={Cancel} alt="Cancel" onClick={() => { setFile(null) }} className="py-1 w-[30px] h-[40px]" />
+                                                    <img src="https://i.ibb.co/1zspQzq/cancel-icon.png" alt="Cancel" onClick={() => { setFile(null) }} className="py-1 w-[30px] h-[40px]" />
                                                 </div>
                                             ) : (
                                                 <div className="flex justify-center font-medium text-xl mt-[-15px] text-white">

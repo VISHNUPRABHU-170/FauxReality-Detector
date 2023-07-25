@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Google from "./google-icon.png";
 import { useState } from "react";
 
 function Signup() {
@@ -23,7 +22,7 @@ function Signup() {
                         </div>
                         <div className="flex justify-center mt-2">
                             <div className="flex items-center bg-white border-2 border-gray-500 rounded-lg w-[250px] h-[40px]">
-                                <img src={Google} alt="Google" className="px-4 w-15 h-6" />
+                                <img src="https://i.ibb.co/VWRpjX2/google-icon.png" alt="Google" className="px-4 w-15 h-6" />
                                 <button className="ml-[-10px]">Continue with Google</button>
                             </div>
                         </div>
