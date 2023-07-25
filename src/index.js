@@ -7,7 +7,7 @@ import App from './App';
 import Signin from './Components/Signin';
 import Signup from './Components/Signup';
 import { Routes, Route } from 'react-router-dom';
-import Prediction from './Components/Prediction';
+import Prediction from './Components/FinalPrediction';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
