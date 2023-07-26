@@ -60,11 +60,11 @@ function Main() {
                     <div className="grid grid-cols-2 mt-[120px]">
                         <div className="px-[180px] mt-12 grid grid-cols-2">
                             <img src="https://i.ibb.co/S538Sm6/Arrow.png" alt="arrow" className="w-[100px] h-[100px]" />
-                            <p className="flex items-center ml-[-80px] text-lg font-semibold">Upload Image Files <br></br> To Detect Fraudulent</p>
+                            <p className="flex items-center ml-[-80px] text-lg font-semibold">Upload Image Here <br></br> To Detect Fraudulent</p>
                         </div>
                         <div className="px-[180px] mt-12 grid grid-cols-2">
                             <img src="https://i.ibb.co/S538Sm6/Arrow.png" alt="arrow" className="w-[100px] h-[100px]" />
-                            <p className="flex items-center ml-[-80px] text-lg font-semibold">Upload Video Files <br></br> To Detect Fraudulent</p>
+                            <p className="flex items-center ml-[-80px] text-lg font-semibold">Upload Video Here <br></br> To Detect Fraudulent</p>
                         </div>
                     </div>
                     <div className="flex justify-center w-screen">
