@@ -8,7 +8,7 @@ function Signup() {
     
     const handleSubmit = () => {
         if(name.trim() === '' || pass.trim() === ''){
-            window.alert("Fill Detials")
+            window.alert("Fill Detials to SignUp")
         }
     }
 

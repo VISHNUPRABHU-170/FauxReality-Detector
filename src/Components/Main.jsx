@@ -6,7 +6,8 @@ import Navbar from "./Navbar";
 
 
 function Main() {
-    const [show, setShow] = useState(false)
+    const [showN, setNav] = useState(false);
+    const [showP, setPop] = useState(false);
 
     return (
         <div
@@ -21,7 +22,7 @@ function Main() {
                     <nav className="px-[100px] ml-[200px] text-xl font-semibold">
                         <ul className="grid grid-cols-3 gap-[80px]">
                             <li className="py-2 hover:text-[25px] hover:text-black">
-                                <Link to="/">Detect</Link>
+                                <button onClick={() => { setPop(!showP) }}>Detect</button>
                             </li>
                             <li className="py-2 hover:text-[25px] hover:text-black">
                                 <Link to="/signin">Login</Link>
@@ -35,7 +36,7 @@ function Main() {
                 <div className="sm:hidden flex justify-end">
                     <button
                         onClick={() => {
-                            setShow(!show);
+                            setNav(!showN);
                         }}
                         className="text-xl ml-3 font-semibold bg-white text-blue-400 rounded-lg drop-shadow-xl w-[75px] h-[40px] hover:bg-gray-600 hover:text-white"
                     >
@@ -47,9 +48,32 @@ function Main() {
                 <ImageAnalysis />
                 <VideoAnalysis />
             </div>
-            {show && <Navbar />}
+            {showN && <Navbar />}
+            {showP && <Arrowpop />}
         </div>
     );
+
+    function Arrowpop() {
+        return (
+            <div className="fixed inset-0 flex items-center bg-opacity-75 bg-gray-500 z-50">
+                <div className="grid grid-cols-1 gap-[120px]">
+                    <div className="grid grid-cols-2 mt-[120px]">
+                        <div className="px-[180px] mt-12 grid grid-cols-2">
+                            <img src="https://i.ibb.co/S538Sm6/Arrow.png" alt="arrow" className="w-[100px] h-[100px]" />
+                            <p className="flex items-center ml-[-80px] text-lg font-semibold">Upload Image Files <br></br> To Detect Fraudulent</p>
+                        </div>
+                        <div className="px-[180px] mt-12 grid grid-cols-2">
+                            <img src="https://i.ibb.co/S538Sm6/Arrow.png" alt="arrow" className="w-[100px] h-[100px]" />
+                            <p className="flex items-center ml-[-80px] text-lg font-semibold">Upload Video Files <br></br> To Detect Fraudulent</p>
+                        </div>
+                    </div>
+                    <div className="flex justify-center w-screen">
+                        <button onClick={() => { setPop(!showP) }} className="bg-white p-2 border-2 border-blue-600 rounded-lg hover:bg-blue-500 hover:text-white">Got it</button>
+                    </div>
+                </div>
+            </div>
+        );
+    };
 
 };
 
