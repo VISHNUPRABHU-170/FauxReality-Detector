@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+//video analysis component
+//Frames detection
+
 function VideoAnalysis() {
 
     const [file, setFile] = useState(null);
