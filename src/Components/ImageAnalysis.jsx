@@ -23,10 +23,10 @@ function ImageAnalysis() {
     return (
         <div onDrop={handleFileDrop}
             onDragOver={(e) => e.preventDefault()}
-            className="h-screen flex items-center justify-center">
+            className="h-screen flex items-center justify-center bg-[url('https://www.nextplatform.com/wp-content/uploads/2020/04/ab_network-graph-1030x438.jpg')] bg-no-repeat bg-cover">
             <div className="grid grid-cols-1 gap-2">
-                <div className="flex justify-center font-bold text-3xl text-blue-800 drop-shadow-xl">Image Analysis</div>
-                <div className="h-[450px] w-[350px] sm:h-[500px] sm:w-[600px] bg-blue-300 shadow-xl rounded-xl">
+                <div className="flex justify-center font-bold text-4xl text-white drop-shadow-xl">Image Analysis</div>
+                <div className="h-[450px] w-[350px] sm:h-[500px] sm:w-[600px] bg-gradient-to-r from-purple-500 to-blue-500 shadow-2xl rounded-xl">
                     <div className="border-dashed border-2 border-white mt-4 sm:mt-4 ml-4 w-[320px] h-[418px] sm:h-[470px] sm:w-[570px]">
                         <div className="grid grid-cols-1">
                             <div className="py-[60px] grid grid-cols-1">
@@ -54,7 +54,7 @@ function ImageAnalysis() {
                                 <input type="file" className="px-12 mt-[-55px] w-[300px]" />
                             </div>
                             <div className="flex justify-center py-2 sm:py-8">
-                                <button className="bg-white shadow-2xl rounded-md w-[240px] h-[45px] hover:bg-blue-800">
+                                <button className="bg-white shadow-2xl rounded-md w-[240px] h-[45px] hover:bg-blue-900">
                                     <p className="text-[26px] text-blue-700 drop-shadow-xl font-semibold hover:text-white"><Link to="/prediction">Detect Fraudulent</Link></p>
                                 </button>
                             </div>

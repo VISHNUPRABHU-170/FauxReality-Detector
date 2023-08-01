@@ -1,55 +1,14 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
 function Signin() {
-
-    const [name, setName] = useState('');
-    const [pass, setPass] = useState('');
-    
-    const handleSubmit = () => {
-        if(name.trim() === '' || pass.trim() === ''){
-            window.alert("Fill Detials to SignIn")
-        }
-    }
-
-
     return (
-        <div>
-            <div className="fixed inset-0 flex items-center justify-center bg-opacity-75 bg-gray-500 z-50">
-                <div className="bg-white rounded-2xl sm:w-[700px] sm:h-[560px]">
-                    <form className="grid grid-cols-1 gap-[20px] py-[50px] text-lg">
-                        <div className="flex justify-center text-4xl font-bold">
-                            Login
-                        </div>
-                        <div className="flex justify-center mt-2">
-                            <div className="flex items-center bg-white border-2 border-gray-500 rounded-lg w-[250px] h-[40px]">
-                                <img src="https://i.ibb.co/VWRpjX2/google-icon.png" alt="Google" className="px-4 w-15 h-6" />
-                                <button className="ml-[-10px]">Continue with Google</button>
-                            </div>
-                        </div>
-                        <div className="flex justify-center mt-5 font-semibold">
-                            <div className="grid grid-cols-1">
-                                <h1 className="text-gray-500">USERNAME</h1>
-                                <input type="text" onChange={(e) => {setName(e.target.value)}} className="bg-gray-100 border-2 w-[300px] border-gray-200 rounded-md p-2" required />
-                            </div>
-                        </div>
-                        <div className="flex justify-center  font-semibold">
-                            <div className="grid grid-cols-1">
-                                <h1 className="text-gray-500">PASSWORD</h1>
-                                <input type="password" onChange={(e) => {setPass(e.target.value)}} className="bg-gray-100 border-2 w-[300px] border-gray-200 rounded-md p-2" required />
-                            </div>
-                        </div>
-                        <div className="flex justify-center  font-semibold">
-                            <Link to="/" onClick={handleSubmit} className="flex justify-center font-semibold py-1 ml-2 mt-[-8px] w-[100px] h-[40px] text-blue-400 rounded-lg shadow-xl hover:bg-blue-600 hover:text-white">Login</Link>
-                        </div>
-                        <div className="flex justify-center">
-                            <p className="ml-6">Don't have an Account yet?</p>
-                            <Link to="/signup" className="flex justify-center font-semibold py-1  ml-2 mt-[-8px] w-[100px] h-[40px] text-blue-400 rounded-lg shadow-xl hover:bg-blue-600 hover:text-white">SignUp</Link>
-                        </div>
-                    </form>
-                </div>
+        <form className="mt-16 sm:mt-[100px] grid grid-flow-row gap-10 flex justify-center text-xl font-semibold">
+            <input type="text" placeholder="Enter MailID" required className="w-[300px] p-3 bg-blue-200 border-2 border-white outline-none rounded-lg shadow-2xl focus:bg-white " />
+            <input type="password" placeholder="Enter Password" required className="w-[300px] p-3 bg-blue-200 border-2 border-white outline-none  rounded-lg shadow-2xl focus:bg-white" />
+            <div className="flex justify-center">
+                <button type="submit" className="p-2 w-[100px] bg-transparent text-white border-2 rounded-lg shadow-2xl hover:bg-white hover:text-black"><Link to="/">Signin</Link></button>
             </div>
-        </div>
+        </form>
     );
 }
 
