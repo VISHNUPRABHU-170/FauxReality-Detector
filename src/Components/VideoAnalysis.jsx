@@ -27,7 +27,10 @@ function VideoAnalysis() {
     return (
         <div onDrop={handleFileDrop}
             onDragOver={(e) => e.preventDefault()}
-            className="h-screen flex items-center justify-center bg-[url('https://assets-global.website-files.com/5f3ae94489e0968a6114dc24/61eeae495436c947c638ac56_5fadc1d01d6c0b5c07c87178_Why%2520data%2520integration%2520in%2520healthcare%2520is%2520a%2520big%2520deal.jpeg')] bg-no-repeat bg-cover">
+            className="h-screen flex items-center justify-center bg-no-repeat bg-cover"
+            style={{
+                backgroundImage: "url('https://assets-global.website-files.com/5f3ae94489e0968a6114dc24/61eeae495436c947c638ac56_5fadc1d01d6c0b5c07c87178_Why%2520data%2520integration%2520in%2520healthcare%2520is%2520a%2520big%2520deal.jpeg')",
+            }}>
             <div className="grid grid-cols-1 gap-2">
                 <div className="flex justify-center font-bold text-4xl text-white drop-shadow-xl">Video Analysis</div>
                 <div className="h-[450px] w-[350px] sm:h-[500px] sm:w-[600px] bg-gradient-to-r from-blue-500 to-pink-500 shadow-xl rounded-xl">
